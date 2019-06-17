@@ -5,8 +5,8 @@ import shutil
 import os
 
 # input('Insert the folder path: ')
-rootFolder = '/home/theeam/Documents/learning/python/automate the boring stuff with python/Chapter 9'
-size = 1200
+rootFolder = input('Insert the root folder path: ')
+size = int(input('Insert the minimum size in bytes: '))
 
 for folderName, subfolders, filenames in os.walk(rootFolder):
     for filename in filenames:
