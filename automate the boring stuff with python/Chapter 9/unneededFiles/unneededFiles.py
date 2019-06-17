@@ -8,8 +8,11 @@ rootFolder = input('Insert the root folder path: ')
 size = int(input('Insert the minimum size in bytes: '))
 
 for folderName, subfolders, filenames in os.walk(rootFolder):
+
     for filename in filenames:
-        absoluteFilePath = folderName + '/' + filename
+
+        absoluteFilePath = os.path.join(folderName, filename)
         fileSize = os.path.getsize(absoluteFilePath)
-        if fileSize >= size:
+
+        if fileSize > size:
             print('* FILE: ' + absoluteFilePath + '\nSIZE: ' + str(fileSize))
