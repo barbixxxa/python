@@ -3,17 +3,14 @@
 
 import shutil
 import os
-import re
 
+rootFolder = input('Insert the folder path: ')
+extension = input('Insert the file extension: ')
+newFolderPath = input('Insert the new folder path: ')
 
-def selectiveCopy(rootFolder, extension, newFolderPath):
-    for folderName, subfolders, filenames in os.walk(rootFolder):
-        for filename in filenames:
-            if filename.endswith('.' + extension):
-                print('\n ### Copying ###\n * FILE: ' + filename + '\n * AT: ' +
-                      folderName + '\n * TO: ' + newFolderPath + '\n##################\n')
-                shutil.copy(folderName + '/' + filename, newFolderPath)
-
-
-selectiveCopy('/home/theeam/Documents/learning/python/automate the boring stuff with python/Chapter 9', 'txt',
-              '/home/theeam/Documents/learning/python/automate the boring stuff with python/Chapter 9/selectiveCopy')
+for folderName, subfolders, filenames in os.walk(rootFolder):
+    for filename in filenames:
+        if filename.endswith('.' + extension):
+            print('\n ### Copying ###\n * FILE: ' + filename + '\n * AT: ' +
+                  folderName + '\n * TO: ' + newFolderPath + '\n##################\n')
+            shutil.copy(folderName + '/' + filename, newFolderPath)
