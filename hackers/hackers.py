@@ -5,92 +5,65 @@ import classes
 
 def compile():
     fila = []
-    print('--- Lista de Feramentas ---\n0 - Portal\n1 - Aparicao\n2 - Acesso\n3 - Kraken\n4 - Ariete\n5 - Worms\n6 - Parasita\n7 - Maniaco\n8 - Raio\n9 - Protetor\n10 - Explosao\n11 - Muralha\n12 - Shuriken\n13 - Canhao\n14 - Compilar')
-    while True:
-        try:
-            item = int(input('O que você quer compilar?: '))
-        except:
-            print('Valor incorreto')
-        else:
-            if item == 0:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Portal())
 
-            elif item == 1:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Aparicao())
+    qtd_portal = int(input('Quantidade de Portal: '))
+    for i in range(qtd_portal):
+        fila.append(classes.Portal())
 
-            elif item == 2:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Acesso())
+    qtd_aparicao = int(input('Quantidade de Aparicao: '))
+    for i in range(qtd_aparicao):
+        fila.append(classes.Aparicao())
 
-            elif item == 3:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Kraken())
+    qtd_acesso = int(input('Quantidade de Acesso: '))
+    for i in range(qtd_acesso):
+        fila.append(classes.Acesso())
 
-            elif item == 4:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Ariete())
+    qtd_kraken = int(input('Quantidade de Kraken: '))
+    for i in range(qtd_kraken):
+        fila.append(classes.Kraken())
 
-            elif item == 5:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Worms())
+    qtd_ariete = int(input('Quantidade de Ariete: '))
+    for i in range(qtd_ariete):
+        fila.append(classes.Ariete())
 
-            elif item == 6:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Parasita())
+    qtd_worms = int(input('Quantidade de Worms: '))
+    for i in range(qtd_worms):
+        fila.append(classes.Worms())
 
-            elif item == 7:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Maniaco())
+    qtd_parasita = int(input('Quantidade de Parasita: '))
+    for i in range(qtd_parasita):
+        fila.append(classes.Parasita())
 
-            elif item == 8:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Raio())
+    qtd_maniaco = int(input('Quantidade de Maniaco: '))
+    for i in range(qtd_maniaco):
+        fila.append(classes.Maniaco())
 
-            elif item == 9:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Protetor())
+    qtd_raio = int(input('Quantidade de Raio: '))
+    for i in range(qtd_raio):
+        fila.append(classes.Raio())
 
-            elif item == 10:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Explosao())
+    qtd_protetor = int(input('Quantidade de Protetor: '))
+    for i in range(qtd_protetor):
+        fila.append(classes.Protetor())
 
-            elif item == 11:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Muralha())
+    qtd_explosao = int(input('Quantidade de Explosao: '))
+    for i in range(qtd_explosao):
+        fila.append(classes.Explosao())
 
-            elif item == 12:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Shuriken())
+    qtd_muralha = int(input('Quantidade de Muralha: '))
+    for i in range(qtd_muralha):
+        fila.append(classes.Muralha())
 
-            elif item == 13:
-                qtd = int(input('Quantos você quer compilar?: '))
-                for i in range(qtd):
-                    fila.append(classes.Canhao())
+    qtd_shuriken = int(input('Quantidade de Shuriken: '))
+    for i in range(qtd_shuriken):
+        fila.append(classes.Shuriken())
 
-            elif item == 14:
+    qtd_canhao = int(input('Quantidade de Canhao: '))
+    for i in range(qtd_canhao):
+        fila.append(classes.Canhao())
 
-                for x, y in classes.calcular(fila).items():
-                    print(f"{x}: {y}")
-                break
-
-            else:
-                print(fila)
-                continue
+    for x, y in classes.calcular(fila).items():
+        print(f"{x}: {y}")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,8 @@
 #! /bin/python3
 
+import datetime
+
+
 class Ferramenta:
     def __init__(self, nome, espaco, tempo, preco):
         self.nome = nome
@@ -95,12 +98,14 @@ def calcular(lista):
         else:
             retorno[i.nome] = 1
 
+    print(retorno["Tempo"])
+
+    retorno["Tempo"] = str(datetime.timedelta(seconds=retorno["Tempo"]))
+
     return retorno
 
 
-def test_classes():
-    lista = []
-
+def print_classes():
     portal = Portal()
     print(portal)
 
@@ -143,14 +148,20 @@ def test_classes():
     canhao = Canhao()
     print(canhao)
 
-    lista.append(portal)
-    lista.append(portal)
-    lista.append(aparicao)
-    lista.append(acesso)
-    lista.append(portal)
+
+def get_calcular():
+    lista = []
+
+    lista.append(Portal())
+    lista.append(Aparicao())
 
     print(calcular(lista))
 
 
+def main():
+    print_classes()
+    get_calcular()
+
+
 if __name__ == "__main__":
-    test_classes()
+    main()
