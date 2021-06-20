@@ -1,160 +1,106 @@
 #! /bin/python3
 
-class Portal:
-    def __init__(self, espaco=10, tempo=20, preco=320):
-        self.name = "Portal"
+class Ferramenta:
+    def __init__(self, nome, espaco, tempo, preco):
+        self.nome = nome
         self.espaco = espaco
         self.tempo = tempo*60
         self.preco = preco
 
     def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.nome, self.espaco, self.tempo, self.preco)
 
 
-class Aparicao:
-    def __init__(self, espaco=5, tempo=15, preco=300):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
-
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+class Portal(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Portal", espaco=10, tempo=20, preco=320)
 
 
-class Acesso:
-    def __init__(self, espaco=1, tempo=1, preco=48):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
-
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+class Aparicao(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Aparicao", espaco=5, tempo=15, preco=30)
 
 
-class Kraken:
-    def __init__(self, espaco=7, tempo=8, preco=120):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
-
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+class Acesso(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Acesso", espaco=1, tempo=1, preco=48)
 
 
-class Ariete:
-    def __init__(self, espaco=5, tempo=10, preco=120):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
-
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+class Kraken(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Kraken", espaco=7, tempo=8, preco=120)
 
 
-class Worms:
-    def __init__(self, espaco=3, tempo=1, preco=50):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
-
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+class Ariete(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Ariete", espaco=5, tempo=10, preco=120)
 
 
-class Parasita:
-    def __init__(self, espaco=3, tempo=0.3, preco=40):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
-
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+class Worms(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Worms", espaco=3, tempo=1, preco=50)
 
 
-class Maniaco:
-    def __init__(self, espaco=15, tempo=30, preco=200):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
-
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+class Parasita(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Parasita", espaco=3, tempo=0.3, preco=40)
 
 
-class Raio:
-    def __init__(self, espaco=6, tempo=8, preco=70):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
-
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+class Maniaco(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Maniaco", espaco=15, tempo=30, preco=200)
 
 
-class Protetor:
-    def __init__(self, espaco=4, tempo=5, preco=150):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
-
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+class Raio(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Raio", espaco=6, tempo=8, preco=70)
 
 
-class Explosao:
-    def __init__(self, espaco=6, tempo=5, preco=60):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
-
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+class Protetor(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Protetor", espaco=4, tempo=5, preco=150)
 
 
-class Muralha:
-    def __init__(self, espaco=2, tempo=2, preco=150):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
-
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+class Explosao(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Explosao", espaco=6, tempo=5, preco=60)
 
 
-class Shuriken:
-    def __init__(self, espaco=1, tempo=0.3, preco=20):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
-
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+class Muralha(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Muralha", espaco=2, tempo=2, preco=150)
 
 
-class Canhao:
-    def __init__(self, espaco=1, tempo=0.2, preco=14):
-        self.name = "Portal"
-        self.espaco = espaco
-        self.tempo = tempo*60
-        self.preco = preco
+class Shuriken(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Shuriken", espaco=1, tempo=0.3, preco=20)
 
-    def __str__(self):
-        return "--- %s --- \nEspaço em disco: %s \nTempo para compilar: %s \nPreço para compilar: %s" % (self.name, self.espaco, self.tempo, self.preco)
+
+class Canhao(Ferramenta):
+    def __init__(self):
+        super().__init__(nome="Canhao", espaco=1, tempo=0.2, preco=14)
+
+
+def calcular(lista):
+
+    retorno = {"Espaço": 0, "Tempo": 0, "Preço": 0}
+
+    for i in lista:
+        retorno["Espaço"] += i.espaco
+        retorno["Tempo"] += i.tempo
+        retorno["Preço"] += i.preco
+
+        if (retorno.get(i.nome)):
+            retorno[i.nome] += 1
+        else:
+            retorno[i.nome] = 1
+
+    return retorno
 
 
 def test_classes():
+    lista = []
+
     portal = Portal()
     print(portal)
 
@@ -170,7 +116,7 @@ def test_classes():
     ariete = Ariete()
     print(ariete)
 
-    worms = Aparicao()
+    worms = Worms()
     print(worms)
 
     parasita = Parasita()
@@ -196,6 +142,14 @@ def test_classes():
 
     canhao = Canhao()
     print(canhao)
+
+    lista.append(portal)
+    lista.append(portal)
+    lista.append(aparicao)
+    lista.append(acesso)
+    lista.append(portal)
+
+    print(calcular(lista))
 
 
 if __name__ == "__main__":
