@@ -84,11 +84,61 @@ class Canhao(Ferramenta):
         super().__init__(nome="Canhao", espaco=1, tempo=0.2, preco=14)
 
 
+def create_tool(tipo):
+
+    if tipo == "Portal":
+        return Portal()
+
+    elif tipo == "Aparicao":
+        return Aparicao()
+
+    elif tipo == "Acesso":
+        return Acesso()
+
+    elif tipo == "Kraken":
+        return Kraken()
+
+    elif tipo == "Ariete":
+        return Ariete()
+
+    elif tipo == "Worms":
+        return Worms()
+
+    elif tipo == "Parasita":
+        return Parasita()
+
+    elif tipo == "Maniaco":
+        return Maniaco()
+
+    elif tipo == "Raio":
+        return Raio()
+
+    elif tipo == "Protetor":
+        return Protetor()
+
+    elif tipo == "Explosao":
+        return Explosao()
+
+    elif tipo == "Muralha":
+        return Muralha()
+
+    elif tipo == "Shuriken":
+        return Shuriken()
+
+    elif tipo == "Canhao":
+        return Canhao()
+    else:
+        return 0
+
+
 def calcular(lista):
 
     retorno = {"Espaço": 0, "Tempo": 0, "Preço": 0}
 
     for i in lista:
+        if i == 0:
+            continue
+
         retorno["Espaço"] += i.espaco
         retorno["Tempo"] += i.tempo
         retorno["Preço"] += i.preco

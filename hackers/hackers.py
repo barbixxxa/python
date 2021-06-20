@@ -3,64 +3,78 @@
 import classes
 
 
+def create(qtd, tipo, qtd_total):
+    if qtd == 0:
+        return (0, qtd_total)
+    for i in range(qtd):
+        tool = classes.create_tool(tipo)
+        qtd_total -= tool.espaco
+
+    print(f"\n-> Espaço livre no disco: {qtd_total}\n")
+
+    return (tool, qtd_total)
+
+
 def compile():
     fila = []
 
-    qtd_portal = int(input('Quantidade de Portal: '))
-    for i in range(qtd_portal):
-        fila.append(classes.Portal())
+    qtd_total = int(input('Espaço total no disco: '))
 
-    qtd_aparicao = int(input('Quantidade de Aparicao: '))
-    for i in range(qtd_aparicao):
-        fila.append(classes.Aparicao())
+    qtd_tool = int(input('Quantidade de Portal: '))
+    (tool, qtd_total) = create(qtd_tool, "Portal", qtd_total)
+    fila.append(tool)
 
-    qtd_acesso = int(input('Quantidade de Acesso: '))
-    for i in range(qtd_acesso):
-        fila.append(classes.Acesso())
+    qtd_tool = int(input('Quantidade de Aparicao: '))
+    (tool, qtd_total) = create(qtd_tool, "Aparicao", qtd_total)
+    fila.append(tool)
 
-    qtd_kraken = int(input('Quantidade de Kraken: '))
-    for i in range(qtd_kraken):
-        fila.append(classes.Kraken())
+    qtd_tool = int(input('Quantidade de Acesso: '))
+    (tool, qtd_total) = create(qtd_tool, "Acesso", qtd_total)
+    fila.append(tool)
 
-    qtd_ariete = int(input('Quantidade de Ariete: '))
-    for i in range(qtd_ariete):
-        fila.append(classes.Ariete())
+    qtd_tool = int(input('Quantidade de Kraken: '))
+    (tool, qtd_total) = create(qtd_tool, "Kraken", qtd_total)
+    fila.append(tool)
 
-    qtd_worms = int(input('Quantidade de Worms: '))
-    for i in range(qtd_worms):
-        fila.append(classes.Worms())
+    qtd_tool = int(input('Quantidade de Ariete: '))
+    (tool, qtd_total) = create(qtd_tool, "Ariete", qtd_total)
+    fila.append(tool)
 
-    qtd_parasita = int(input('Quantidade de Parasita: '))
-    for i in range(qtd_parasita):
-        fila.append(classes.Parasita())
+    qtd_tool = int(input('Quantidade de Worms: '))
+    (tool, qtd_total) = create(qtd_tool, "Worms", qtd_total)
+    fila.append(tool)
 
-    qtd_maniaco = int(input('Quantidade de Maniaco: '))
-    for i in range(qtd_maniaco):
-        fila.append(classes.Maniaco())
+    qtd_tool = int(input('Quantidade de Parasita: '))
+    (tool, qtd_total) = create(qtd_tool, "Parasita", qtd_total)
+    fila.append(tool)
 
-    qtd_raio = int(input('Quantidade de Raio: '))
-    for i in range(qtd_raio):
-        fila.append(classes.Raio())
+    qtd_tool = int(input('Quantidade de Maniaco: '))
+    (tool, qtd_total) = create(qtd_tool, "Maniaco", qtd_total)
+    fila.append(tool)
 
-    qtd_protetor = int(input('Quantidade de Protetor: '))
-    for i in range(qtd_protetor):
-        fila.append(classes.Protetor())
+    qtd_tool = int(input('Quantidade de Raio: '))
+    (tool, qtd_total) = create(qtd_tool, "Raio", qtd_total)
+    fila.append(tool)
 
-    qtd_explosao = int(input('Quantidade de Explosao: '))
-    for i in range(qtd_explosao):
-        fila.append(classes.Explosao())
+    qtd_tool = int(input('Quantidade de Protetor: '))
+    (tool, qtd_total) = create(qtd_tool, "Protetor", qtd_total)
+    fila.append(tool)
 
-    qtd_muralha = int(input('Quantidade de Muralha: '))
-    for i in range(qtd_muralha):
-        fila.append(classes.Muralha())
+    qtd_tool = int(input('Quantidade de Explosao: '))
+    (tool, qtd_total) = create(qtd_tool, "Explosao", qtd_total)
+    fila.append(tool)
 
-    qtd_shuriken = int(input('Quantidade de Shuriken: '))
-    for i in range(qtd_shuriken):
-        fila.append(classes.Shuriken())
+    qtd_tool = int(input('Quantidade de Muralha: '))
+    (tool, qtd_total) = create(qtd_tool, "Muralha", qtd_total)
+    fila.append(tool)
 
-    qtd_canhao = int(input('Quantidade de Canhao: '))
-    for i in range(qtd_canhao):
-        fila.append(classes.Canhao())
+    qtd_tool = int(input('Quantidade de Shuriken: '))
+    (tool, qtd_total) = create(qtd_tool, "Shuriken", qtd_total)
+    fila.append(tool)
+
+    qtd_tool = int(input('Quantidade de Canhao: '))
+    (tool, qtd_total) = create(qtd_tool, "Canhao", qtd_total)
+    fila.append(tool)
 
     for x, y in classes.calcular(fila).items():
         print(f"{x}: {y}")
